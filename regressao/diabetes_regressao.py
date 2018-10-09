@@ -3,7 +3,7 @@ import pandas
 from sklearn import linear_model
 import matplotlib.pyplot as plt
 
-target = 'disease_progression'
+target = 'dp'
 attribute1 = 'age'
 attribute2 = 'sex'
 

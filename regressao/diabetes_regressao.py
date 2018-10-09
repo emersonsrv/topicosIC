@@ -4,8 +4,12 @@ from sklearn import linear_model
 import matplotlib.pyplot as plt
 
 target = 'dp'
-attribute1 = 'age'
-attribute2 = 'sex'
+
+#Atributos escolhidos
+
+#attribute1 = 'bmi'
+attribute1 = 's5'
+attribute2 = 's3'
 
 diabetes = load_diabetes()
 tabela = pandas.DataFrame(diabetes.data)
@@ -48,7 +52,8 @@ y_teste = a[0]*X_v[attribute1] + a[1]*X_v[attribute2] + b
 print(y_teste[len(X)-20], y_t[0],y_pred[0])
 
 #plota todos os valores de validação
-plt.scatter(X_v[attribute2], y_v,  color='black')
-plt.scatter(X_v[attribute2], y_pred, color='blue')
+plt.scatter(X_v[attribute1], y_v,  color='black')
+plt.scatter(X_v[attribute1], y_pred, color='blue')
 plt.legend(["Real", "Predito"])
+plt.savefig('regressao%s.png'%(attribute1))
 plt.show()

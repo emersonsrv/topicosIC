@@ -24,7 +24,7 @@ else:
 	instance = 1
 
 data = loadData(action, subject, instance)
-
+print(data.shape)
 
 fig = plt.figure()
 plt.xlim(0, 300)

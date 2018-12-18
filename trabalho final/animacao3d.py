@@ -34,16 +34,21 @@ ax = p3.Axes3D(fig)
 ax.set_xlim3d([0.0, 300.0])
 ax.set_xlabel('X')
 
-ax.set_ylim3d([300.0, 0.0])
-ax.set_ylabel('Y')
+ax.set_ylim3d([0.0, 1400.0])
+ax.set_ylabel('Z')
 
-ax.set_zlim3d([0.0, 300.0])
-ax.set_zlabel('Z')
-graph, = plt.plot([], [], 'ro')
+ax.set_zlim3d([300.0, 0.0])
+ax.set_zlabel('Y')
+#graph = ax.scatter(data[1,:,0], data[1,:,2], data[1,:,1])
+
+graph = ax.scatter([], [], [])
+
 
 def animate(i):
-	graph.set_data(data[i,:,0], data[i,:,1], data[i,:,2])
+	graph._offsets3d = (data[i,:,0], data[i,:,2], data[i,:,1])
 	return graph
 
 ani = FuncAnimation(fig, animate, frames=data.shape[0], interval=100)
 plt.show()
+
+

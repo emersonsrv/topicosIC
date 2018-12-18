@@ -9,15 +9,16 @@ edges = [[20, 1, 2, 1,  8, 10, 2,  9, 11, 3, 4, 7, 7,  5, 6,  14, 15, 16, 17],
 
 basePath = '../../MSRAction3D/skeleton/'
 
+#Carrega instancia do arquivo 
 def loadData(action, subject, instance):
 	ins = np.loadtxt(basePath + 'a%02i_s%02i_e%02i_skeleton.txt'%(action, subject, instance))
 	ins = ins.reshape((ins.shape[0]//20, 20, 4))
 	return ins
 
 #Cria dicionario com toda a base de dados
-def loadBase():
+def loadBase(actions = range(1, 21)):
     base = {}
-    for action in range(1, 21):
+    for action in actions:
         base[action] = {}
         for subject in range(1, 11):
             base[action][subject] = {}

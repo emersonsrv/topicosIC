@@ -39,7 +39,6 @@ ax.set_ylabel('Z')
 
 ax.set_zlim3d([300.0, 0.0])
 ax.set_zlabel('Y')
-#graph = ax.scatter(data[1,:,0], data[1,:,2], data[1,:,1])
 
 graph = ax.scatter([], [], [])
 
